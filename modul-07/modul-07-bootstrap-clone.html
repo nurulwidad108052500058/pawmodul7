@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Clone</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <style>
+/* ===== Sesuai Modul 7 bagian 9 ===== */
+.bg-purple {
+    background-color: #7533F9 !important;
+}
+
+#main a {
+    color: gray;
+}
+
+#main a:hover {
+    color: rgb(73, 73, 73);
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+    color: var(--bs-primary) !important;
+}
+
+/* ===== Tambahan (bukan dari modul) =====
+   Class .icon-link belum lengkap di Bootstrap 5.3.0-alpha2,
+   jadi ditambahkan agar link "Get Bootstrap Icons ->" tampil rapi. */
+.icon-link {
+    display: inline-flex;
+    gap: .375rem;
+    align-items: center;
+    text-decoration-color: rgba(var(--bs-link-color-rgb), .5);
+    text-underline-offset: .25em;
+}
+.icon-link > .bi {
+    transition: transform .2s ease-in-out;
+}
+.icon-link-hover:hover > .bi {
+    transform: translate3d(.25em, 0, 0);
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg bg-purple" data-bs-theme="dark">
+    <!-- Container -->
+    <div class="container py-2 px-4">
+        <!-- Navbar Brand -->
+        <a href="#" class="navbar-brand mb-0 h1">
+            <img class="img-fluid" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTggOTQiIHdpZHRoPSIxMTgiIGhlaWdodD0iOTQiPjxwYXRoIGQ9Ik04MS44IDY2LjJjMTEuMSAwIDE3LjktNS41IDE3LjktMTQuNiAwLTYuNi00LjgtMTEuNy0xMS40LTEyLjR2LS4zYzUuMy0uOSA5LjUtNS40IDkuNS0xMS4xIDAtOC4yLTYuMy0xMy4xLTE2LjMtMTMuMUg0OS4zdjUxLjV6TTYwIDMxLjFoMTUuNGM0LjUgMCA3IDIgNyA1LjcgMCAzLjktMi44IDYtNy44IDZINjB6bTAgMTcuM2gxNy43YzUuMyAwIDguMSAyLjEgOC4xIDYuMiAwIDQtMi45IDYuMi04LjMgNi4ySDYweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwIDApIHNjYWxlKDEuMDUpIHRyYW5zbGF0ZSgwIDIpIiBmaWxsPSIjZmZmIi8+PC9zdmc+Cg==" alt="logo" style="width: 40px;">
+        </a>
+
+        <!-- Navbar Toggler -->
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-end bg-purple" id="offcanvasNavbar">
+            <!-- Offcanvas Header -->
+            <div class="offcanvas-header pb-0 px-4">
+                <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Bootstrap</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- Offcanvas Body -->
+            <div class="offcanvas-body pt-0 px-4">
+                <hr class="d-md-none text-white-50"> <!-- Horizontal Line -->
+                <!-- Top Menu -->
+                <ul class="navbar-nav flex-row flex-wrap">
+                    <li class="nav-item col-6 col-md-auto"><a href="#" class="nav-link active">Docs</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a href="#" class="nav-link">Examples</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a href="#" class="nav-link">Icons</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a href="#" class="nav-link">Themes</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a href="#" class="nav-link">Blog</a></li>
+                </ul>
+                <hr class="d-md-none text-white-50"> <!-- Horizontal Line -->
+
+                <!-- Sosial Media -->
+                <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                    <li class="nav-item col-6 col-md-auto">
+                        <a href="#" class="nav-link active">
+                            <i class="bi-github"></i><small class="ms-2 d-md-none">Github</small>
+                        </a>
+                    </li>
+                    <li class="nav-item col-6 col-md-auto">
+                        <a href="#" class="nav-link active">
+                            <i class="bi-twitter"></i><small class="ms-2 d-md-none">Twitter</small>
+                        </a>
+                    </li>
+                    <li class="nav-item col-6 col-md-auto">
+                        <a href="#" class="nav-link active">
+                            <i class="bi-slack"></i><small class="ms-2 d-md-none">Slack</small>
+                        </a>
+                    </li>
+                    <li class="nav-item col-12 col-lg-auto">
+                        <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                        <hr class="d-lg-none my-2 text-white-50">
+                    </li>
+                    <li class="nav-item">
+                        <!-- Dropdown versi -->
+                        <div class="dropdown" data-bs-theme="light">
+                            <button type="button" class="btn nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-lg-none">Bootstrap</span> v5.3
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><h6 class="dropdown-header">v5 releases</h6></li>
+                                <li><button class="dropdown-item active bg-purple" type="button"><small>Latest (5.3.x) <i class="bi-check"></i></small></button></li>
+                                <li><button class="dropdown-item" type="button"><small>v5.2.3</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small>v5.1.3</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small>v5.0.2</small></button></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Previous releases</h6></li>
+                                <li><button class="dropdown-item" type="button"><small>v4.6.x</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small>v3.4.1</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small>v2.3.2</small></button></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><button class="dropdown-item" type="button"><small>All versions</small></button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item col-12 col-lg-auto">
+                        <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                        <hr class="d-lg-none my-2 text-white-50">
+                    </li>
+                    <li class="nav-item">
+                        <!-- Dropdown tema -->
+                        <div class="dropdown" data-bs-theme="light">
+                            <button type="button" class="btn nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi-brightness-high-fill"></i><span class="d-lg-none">Toggle theme</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><button class="dropdown-item active bg-purple" type="button"><small><i class="bi-brightness-high-fill me-2"></i>Light</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small><i class="bi-moon-stars-fill me-2"></i>Dark</small></button></li>
+                                <li><button class="dropdown-item" type="button"><small><i class="bi-circle-half me-2"></i>Auto</small></button></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main -->
+<div class="bg-light mt-5" id="main">
+    <!-- Container -->
+    <div class="container py-5 px-4">
+        <div class="row">
+            <div class="col-md-5 order-md-2">
+                <img class="img-fluid" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNDIwIj4KPHJlY3QgeD0iMjUwIiB5PSIyMCIgd2lkdGg9IjIzMCIgaGVpZ2h0PSI5MCIgcng9IjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2FkYjViZCIvPjxyZWN0IHg9IjMzMCIgeT0iNjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI1IiBmaWxsPSIjMGQ2ZWZkIi8+CjxyZWN0IHg9IjEwMCIgeT0iNzAiIHdpZHRoPSI5MCIgaGVpZ2h0PSIyNiIgcng9IjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIwYzk5NyIvPjxyZWN0IHg9IjExNSIgeT0iODIiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0IiBmaWxsPSIjMjBjOTk3Ii8+CjxyZWN0IHg9IjEwIiB5PSIxMjUiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjIiIHJ4PSIzIiBmaWxsPSIjYWRiNWJkIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMTkwIiByPSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiMwZDZlZmQiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjQ4IiBjeT0iMTkwIiByPSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiMwZDZlZmQiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjY1IiB5PSIxODQiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0iIzBkNmVmZCIvPgo8cmVjdCB4PSIzOTUiIHk9IjE2NSIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI2RjMzU0NSIvPgo8cmVjdCB4PSI0NDAiIHk9IjIyNSIgd2lkdGg9IjUyIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iI2Q2MzM4NCIvPgo8cmVjdCB4PSIxNTAiIHk9IjE1MCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyMTUiIHJ4PSI0MCIgZmlsbD0iIzc1MzNGOSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyIDI4NSAyNTcpIi8+Cjx0ZXh0IHg9IjI4NSIgeT0iMzAwIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTcwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIgMjg1IDI1NykiPkI8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSIzMTgiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjYiIHJ4PSIzIiBmaWxsPSIjZmZjMTA3Ii8+Cjwvc3ZnPgo=" alt="main logo">
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h1 class="mt-4 display-3">Build fast, responsive sites with Bootstrap</h1>
+                <p class="fs-5 mt-3">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row">
+                        <button type="button" class="btn bg-purple text-white btn-lg mb-3 me-md-3 px-4 py-3">Get Started</button>
+                        <button type="button" class="btn btn-outline-dark btn-lg mb-3 px-4 py-3">Download</button>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    Currently <strong>v5.3.0-alpha2.</strong> · <a href="#">v4.6.x docs</a> · <a href="#">All releases</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<div id="bs-icons">
+    <!-- Container -->
+    <div class="container py-5 px-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <i class="bi bi-subtract fs-2 bg-warning py-2 px-3 rounded-3 text-white"></i>
+                </div>
+                <h2 class="display-5 mb-3">Personalize it with <br/>Bootstrap Icons</h2>
+                <p class="fs-5"><a href="#">Bootstrap Icons</a> is an open source SVG icon library featuring over 1,800 glyphs, with more added every release. They're designed to work in any project, whether you use Bootstrap itself or not. Use them as SVGs or icon fonts--both options give you vector scaling and easy customization via CSS.</p>
+                <a class="icon-link icon-link-hover lead fw-semibold mb-5" href="#">
+                    Get Bootstrap Icons
+                    <i class="bi bi-arrow-right mb-2"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" src="data:image/png;base64,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" alt="Bootstrap Icons">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Official Themes -->
+<div id="bs-themes">
+    <!-- Container -->
+    <div class="container py-5 px-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-3 mt-5">
+                    <i class="bi bi-droplet-fill fs-2 bg-info py-2 px-3 rounded-3 text-white"></i>
+                </div>
+                <h2 class="display-5">Make it yours with official Bootstrap Themes</h2>
+                <p class="fs-5">Take Bootstrap to the next level with premium themes from the <a href="#">official Bootstrap Themes marketplace</a>. Themes are built on Bootstrap as their own extended frameworks, rich with new components and plugins, documentation, and powerful build tools.</p>
+                <a class="icon-link icon-link-hover lead fw-semibold mb-5" href="#">
+                    Browse Bootstrap Themes
+                    <i class="bi bi-arrow-right mb-2"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" src="data:image/png;base64,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" alt="Bootstrap Themes">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer" class="bg-light py-5">
+    <!-- Container -->
+    <div class="container py-5 px-4">
+        <div class="row">
+            <div class="col-lg-3 mb-5">
+                <a href="#" class="logo text-decoration-none">
+                    <div class="d-flex">
+                        <img class="img-fluid" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTggOTQiIHdpZHRoPSIxMTgiIGhlaWdodD0iOTQiPjxwYXRoIGQ9Ik04MS44IDY2LjJjMTEuMSAwIDE3LjktNS41IDE3LjktMTQuNiAwLTYuNi00LjgtMTEuNy0xMS40LTEyLjR2LS4zYzUuMy0uOSA5LjUtNS40IDkuNS0xMS4xIDAtOC4yLTYuMy0xMy4xLTE2LjMtMTMuMUg0OS4zdjUxLjV6TTYwIDMxLjFoMTUuNGM0LjUgMCA3IDIgNyA1LjcgMCAzLjktMi44IDYtNy44IDZINjB6bTAgMTcuM2gxNy43YzUuMyAwIDguMSAyLjEgOC4xIDYuMiAwIDQtMi45IDYuMi04LjMgNi4ySDYweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwIDApIHNjYWxlKDEuMDUpIHRyYW5zbGF0ZSgwIDIpIiBmaWxsPSIjMDAwIi8+PC9zdmc+Cg==" alt="Bootstrap Logo" style="width: 40px;">
+                        <div class="fs-5 ms-2 text-black">Bootstrap</div>
+                    </div>
+                </a>
+                <div class="mt-2 text-muted">
+                    <small>Designed and built with all the love in the world by the <a href="#" class="text-black">Bootstrap team</a> with the help of <a href="#" class="text-black">our contributors</a>.</small>
+                </div>
+                <div class="mt-2 text-muted">
+                    <small>Code licensed <a href="#" class="text-black">MIT</a>, docs <a href="#" class="text-black">CC BY 3.0</a>.</small>
+                </div>
+                <div class="mt-2 text-muted">
+                    <small>Currently v5.3.0-alpha2.</small>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-1 mb-5">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#">Home</a></li>
+                    <li class="mb-2"><a href="#">Docs</a></li>
+                    <li class="mb-2"><a href="#">Examples</a></li>
+                    <li class="mb-2"><a href="#">Icons</a></li>
+                    <li class="mb-2"><a href="#">Themes</a></li>
+                    <li class="mb-2"><a href="#">Blog</a></li>
+                    <li class="mb-2"><a href="#">Swag Store</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-5">
+                <h5>Guides</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#">Getting started</a></li>
+                    <li class="mb-2"><a href="#">Starter template</a></li>
+                    <li class="mb-2"><a href="#">Webpack</a></li>
+                    <li class="mb-2"><a href="#">Parcel</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-5">
+                <h5>Projects</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#">Bootstrap 5</a></li>
+                    <li class="mb-2"><a href="#">Bootstrap 4</a></li>
+                    <li class="mb-2"><a href="#">Icons</a></li>
+                    <li class="mb-2"><a href="#">RFS</a></li>
+                    <li class="mb-2"><a href="#">npm starter</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-5">
+                <h5>Community</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#">Issues</a></li>
+                    <li class="mb-2"><a href="#">Discussions</a></li>
+                    <li class="mb-2"><a href="#">Corporate sponsors</a></li>
+                    <li class="mb-2"><a href="#">Open Collective</a></li>
+                    <li class="mb-2"><a href="#">Slack</a></li>
+                    <li class="mb-2"><a href="#">Stack overflow</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
